@@ -14,19 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'IndexController');
+Route::get('company/{id}', 'CompanyController@index');
 
-Route::get('/company/:company_id', function ($company_id) {
-    return view('welcome');
+/*Route::get('company/{id}', function ($id) {
+    return view('company_page');
 });
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+*/
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

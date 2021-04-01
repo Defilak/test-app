@@ -6,11 +6,9 @@
 
     <title>test-app</title>
 
-    <!-- CSS и JavaScript -->
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
 </head>
 
 <body>
@@ -46,8 +44,8 @@
         <main>
             <div class="row">
                 @foreach ($cards as $card)
-                <div class="col-lg-3 g-3">
-                    @component('company_card', $card)
+                <div class="col-md-3 g-3">
+                    @component('company.card', ['card' => $card])
                     @endcomponent
                 </div>
                 @endforeach
