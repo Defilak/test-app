@@ -36,6 +36,8 @@ async function handleAddCommentForm(e, form) {
 
         let collapse = new bootstrap.Collapse(document.getElementById('collapse_' + result.comment.company_type))
         collapse.hide()
+        console.log(form.querySelector('textarea'))
+        form.querySelector('textarea').value = ''
     }
 }
 
