@@ -15,6 +15,11 @@ class Comment extends Model
         'company_type',
         'text'
     ];
+    
+    protected $casts = [
+        'created_at' => 'datetime:Y-m-d H:i:s',
+        'updated_at' => 'datetime:Y-m-d H:i:s',
+    ];
 
     public function company()
     {
