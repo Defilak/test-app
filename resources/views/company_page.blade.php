@@ -13,7 +13,8 @@
             @component('company.field', [
                 'id' => $id,
                 'field_type' => $field_type,
-                'company' => $company
+                'company' => $company,
+                'comments' => $comments
             ])
             @endcomponent
         @endforeach

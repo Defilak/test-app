@@ -9,11 +9,13 @@ class Comment extends Model
 {
     use HasFactory;
 
-    /**
-     * Получить все модели, владеющие commentable.
-     */
     public function company()
     {
         return $this->morphTo();
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
     }
 }

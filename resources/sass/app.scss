@@ -32,7 +32,11 @@ body {
     border-bottom-width: 0;
 }
 
-.accordion-header:last-of-type .acb.collapsed {
+.accordion-header/*:last-of-type*/ .acb.collapsed {
+    border-bottom-width: 1px;
+}
+
+.accordion-body {
     border-bottom-width: 1px;
 }
 
@@ -52,10 +56,24 @@ body {
     transform: rotate(180deg);
 }
 
+.comment {
+    @extend .card;
+    
+}
+
 .comment_user {
 
 }
 
-.comment_date {
+.comment_text {
+    @extend .card-body;
+}
+
+
+.company_card {
     
+}
+
+.comment_form {
+
 }
