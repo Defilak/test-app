@@ -6,17 +6,24 @@
     <h1>{{ $company->name }}</h1>
 
     <div id="accordionExample">
+        @component('company.field', [
+            'id' => 0,
+            'field_type' => '',
+            'company' => $company,
+            'comments' => $comments
+        ])
+        @endcomponent
 
         @foreach ($cols as $id => $field_type)
-            @continue($loop->first)
+        @continue($loop->first)
 
             @component('company.field', [
-                'id' => $id,
-                'field_type' => $field_type,
-                'company' => $company,
-                'comments' => $comments
+            'id' => $id,
+            'field_type' => $field_type,
+            'company' => $company,
+            'comments' => $comments
             ])
-            @endcomponent
+        @endcomponent
         @endforeach
 
     </div>

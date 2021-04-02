@@ -2,9 +2,10 @@
 
 @section('content')
 <div class="container">
+
     <div id="cardsContainer" class="row">
         @foreach ($cards as $card)
-        <div class="col-md-3 g-3">
+        <div class="col-lg-3 g-3">
             @component('company.card', ['card' => $card])
             @endcomponent
         </div>

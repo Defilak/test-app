@@ -1,5 +1,60 @@
 //require('./bootstrap')
 
+async function handleAddCommentForm(e, form) {
+    e.preventDefault()
+
+    let response = await fetch(form.action, {
+        method: 'POST',
+        credentials: 'same-origin',
+        'headers': {
+            'X-Requested-With': 'XMLHttpRequest'
+        },  
+        body: new FormData(form)
+    })
+
+    if(response.status == 422) {
+        let result = await response.json()
+        if(result.length == 0) {
+            return
+        }
+
+        form.querySelectorAll('.alert').forEach(e => e.remove())
+        form.prepend(createAlert(result))
+        
+    } else if(response.status == 200) {
+        let result = await response.json()
+
+        form.querySelectorAll('.alert').forEach(e => e.remove())
+
+        if(result.comment.company_type === null) {
+            result.comment.company_type = ''
+        }
+
+        let comments = document.getElementById('commentsContainer_' + result.comment.company_type)
+        comments.classList.remove('d-none')
+        comments.innerHTML += createComment(result)
+
+        let collapse = new bootstrap.Collapse(document.getElementById('collapse_' + result.comment.company_type))
+        collapse.hide()
+    }
+}
+
+function createComment(data) {
+    return `
+        <div class="d-flex flex-colomn">
+            <div class="comment p-2 mb-2">
+                <p class="comment_user">
+                    <a href="#">${data.name}</a>
+                    :
+                    <small>${data.comment.created_at}</small>
+                </p>
+
+                <p class="border comment_text p-2">${data.comment.text}</p>
+            </div>
+        </div>
+        `
+}
+
 async function handleAddCompanyForm(e, form) {
     e.preventDefault()
 
@@ -28,28 +83,26 @@ async function handleAddCompanyForm(e, form) {
         document.getElementById('cardsContainer').append(createCard(result))
 
         let collapse = new bootstrap.Collapse(document.getElementById('addCompanyBlock'))
-        console.log(collapse)
         collapse.hide()
-
     }
-
 }
 
 function createCard(data) {
-    let card = document.querySelector('.card.w-500')
-    card = card.cloneNode(true)
-
+    let card = `
+    <div class="card w-500">
+        <div class="card-body">
+            <h5 class="card-title">${data.name}</h5>
+            <p class="card-text">${data.description}</p>
+            <a href="/company/${data.id}" class="btn btn-primary">Подробнее</a>
+        </div>
+    </div>
+    `
+    
     let col = document.createElement('div')
     col.classList.add('col-md-3')
     col.classList.add('g-3')
+    col.innerHTML += card
 
-    //set data
-    let body = card.querySelector('.card-body')
-    body.querySelector('.card-title').innerHTML = data.name
-    body.querySelector('.card-text').innerHTML = data.description
-    body.querySelector('.btn').href = `/company/${data.id}`
-
-    col.append(card)
     return col
 }
 
@@ -72,3 +125,4 @@ function createAlert(errors, level = 'alert-danger') {
 }
 
 window.handleAddCompanyForm = handleAddCompanyForm
+window.handleAddCommentForm = handleAddCommentForm

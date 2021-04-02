@@ -20,3 +20,4 @@ Route::get('/', 'IndexController');
 Route::get('company/{id}', 'CompanyController@index');
 
 Route::post('company/add', 'CompanyController@addCompany');
+Route::post('/company/{id}/add_comment', 'CompanyController@newComment');

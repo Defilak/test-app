@@ -17,7 +17,7 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    padding: 1rem 1.25rem;
+    padding: 0.2rem 1.25rem;
     font-size: 1rem;
     color: #212529;
     text-align: left;
@@ -28,15 +28,11 @@ body {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out,border-radius .15s ease;
 }
 
-.acb.collapsed {
-    border-bottom-width: 0;
-}
-
 .accordion-header/*:last-of-type*/ .acb.collapsed {
     border-bottom-width: 1px;
 }
 
-.accordion-body {
+.accordion-collapse, .accordion-body {
     border-bottom-width: 1px;
 }
 
@@ -56,24 +52,18 @@ body {
     transform: rotate(180deg);
 }
 
-.comment {
-    @extend .card;
-    
+.company_card { 
+    min-height:200px;
 }
 
-.comment_user {
-
+.comment {
+    width: 100%;
+    border: solid rgba(0,0,0,.125);
+    border-width:0;
 }
 
 .comment_text {
-    @extend .card-body;
-}
-
-
-.company_card {
-    
-}
-
-.comment_form {
-
+    border: solid rgba(0,0,0,.125);
+    border-width:0;
+    border-top-width: 1px;
 }

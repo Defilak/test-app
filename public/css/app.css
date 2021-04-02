@@ -4337,7 +4337,7 @@ input[type=button].btn-block {
   color: #fff;
 }
 
-.card, .comment {
+.card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -4348,31 +4348,30 @@ input[type=button].btn-block {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
 }
-.card > hr, .comment > hr {
+.card > hr {
   margin-right: 0;
   margin-left: 0;
 }
-.card > .list-group, .comment > .list-group {
+.card > .list-group {
   border-top: inherit;
   border-bottom: inherit;
 }
-.card > .list-group:first-child, .comment > .list-group:first-child {
+.card > .list-group:first-child {
   border-top-width: 0;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
 }
-.card > .list-group:last-child, .comment > .list-group:last-child {
+.card > .list-group:last-child {
   border-bottom-width: 0;
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
-.card > .card-header + .list-group, .comment > .card-header + .list-group,
-.card > .list-group + .card-footer,
-.comment > .list-group + .card-footer {
+.card > .card-header + .list-group,
+.card > .list-group + .card-footer {
   border-top: 0;
 }
 
-.card-body, .comment_text {
+.card-body {
   flex: 1 1 auto;
   min-height: 1px;
   padding: 1.25rem;
@@ -4458,7 +4457,7 @@ input[type=button].btn-block {
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
 
-.card-deck .card, .card-deck .comment {
+.card-deck .card {
   margin-bottom: 15px;
 }
 @media (min-width: 576px) {
@@ -4468,7 +4467,7 @@ input[type=button].btn-block {
     margin-right: -15px;
     margin-left: -15px;
   }
-  .card-deck .card, .card-deck .comment {
+  .card-deck .card {
     flex: 1 0 0%;
     margin-right: 15px;
     margin-bottom: 0;
@@ -4476,7 +4475,7 @@ input[type=button].btn-block {
   }
 }
 
-.card-group > .card, .card-group > .comment {
+.card-group > .card {
   margin-bottom: 15px;
 }
 @media (min-width: 576px) {
@@ -4484,45 +4483,41 @@ input[type=button].btn-block {
     display: flex;
     flex-flow: row wrap;
   }
-  .card-group > .card, .card-group > .comment {
+  .card-group > .card {
     flex: 1 0 0%;
     margin-bottom: 0;
   }
-  .card-group > .card + .card, .card-group > .comment + .card, .card-group > .card + .comment, .card-group > .comment + .comment {
+  .card-group > .card + .card {
     margin-left: 0;
     border-left: 0;
   }
-  .card-group > .card:not(:last-child), .card-group > .comment:not(:last-child) {
+  .card-group > .card:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-top, .card-group > .comment:not(:last-child) .card-img-top,
-.card-group > .card:not(:last-child) .card-header,
-.card-group > .comment:not(:last-child) .card-header {
+  .card-group > .card:not(:last-child) .card-img-top,
+.card-group > .card:not(:last-child) .card-header {
     border-top-right-radius: 0;
   }
-  .card-group > .card:not(:last-child) .card-img-bottom, .card-group > .comment:not(:last-child) .card-img-bottom,
-.card-group > .card:not(:last-child) .card-footer,
-.card-group > .comment:not(:last-child) .card-footer {
+  .card-group > .card:not(:last-child) .card-img-bottom,
+.card-group > .card:not(:last-child) .card-footer {
     border-bottom-right-radius: 0;
   }
-  .card-group > .card:not(:first-child), .card-group > .comment:not(:first-child) {
+  .card-group > .card:not(:first-child) {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-top, .card-group > .comment:not(:first-child) .card-img-top,
-.card-group > .card:not(:first-child) .card-header,
-.card-group > .comment:not(:first-child) .card-header {
+  .card-group > .card:not(:first-child) .card-img-top,
+.card-group > .card:not(:first-child) .card-header {
     border-top-left-radius: 0;
   }
-  .card-group > .card:not(:first-child) .card-img-bottom, .card-group > .comment:not(:first-child) .card-img-bottom,
-.card-group > .card:not(:first-child) .card-footer,
-.card-group > .comment:not(:first-child) .card-footer {
+  .card-group > .card:not(:first-child) .card-img-bottom,
+.card-group > .card:not(:first-child) .card-footer {
     border-bottom-left-radius: 0;
   }
 }
 
-.card-columns .card, .card-columns .comment {
+.card-columns .card {
   margin-bottom: 0.75rem;
 }
 @media (min-width: 576px) {
@@ -4534,7 +4529,7 @@ input[type=button].btn-block {
     orphans: 1;
     widows: 1;
   }
-  .card-columns .card, .card-columns .comment {
+  .card-columns .card {
     display: inline-block;
     width: 100%;
   }
@@ -4543,19 +4538,19 @@ input[type=button].btn-block {
 .accordion {
   overflow-anchor: none;
 }
-.accordion > .card, .accordion > .comment {
+.accordion > .card {
   overflow: hidden;
 }
-.accordion > .card:not(:last-of-type), .accordion > .comment:not(:last-of-type) {
+.accordion > .card:not(:last-of-type) {
   border-bottom: 0;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.accordion > .card:not(:first-of-type), .accordion > .comment:not(:first-of-type) {
+.accordion > .card:not(:first-of-type) {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-.accordion > .card > .card-header, .accordion > .comment > .card-header {
+.accordion > .card > .card-header {
   border-radius: 0;
   margin-bottom: -1px;
 }
@@ -10016,7 +10011,7 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 1rem 1.25rem;
+  padding: 0.2rem 1.25rem;
   font-size: 1rem;
   color: #212529;
   text-align: left;
@@ -10027,15 +10022,11 @@ body {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
 }
 
-.acb.collapsed {
-  border-bottom-width: 0;
-}
-
 .accordion-header .acb.collapsed {
   border-bottom-width: 1px;
 }
 
-.accordion-body {
+.accordion-collapse, .accordion-body {
   border-bottom-width: 1px;
 }
 
@@ -10053,4 +10044,20 @@ body {
 .acb:not(.collapsed) .acb_arrow {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230c63e4'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   transform: rotate(180deg);
+}
+
+.company_card {
+  min-height: 200px;
+}
+
+.comment {
+  width: 100%;
+  border: solid rgba(0, 0, 0, 0.125);
+  border-width: 0;
+}
+
+.comment_text {
+  border: solid rgba(0, 0, 0, 0.125);
+  border-width: 0;
+  border-top-width: 1px;
 }

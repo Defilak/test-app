@@ -1,9 +1,10 @@
-<div class="col-lg-8">
-    <form class="comment_form" method="POST" action="/company/{{$id}}/comment/new" onsubmit="handleAddCommentForm(event, this)">
+<div class="p-2">
+    <h5>Комментарий</h5>
+    <form class="card-body comment_form" method="POST" action="/company/{{$company->id}}/add_comment" onsubmit="handleAddCommentForm(event, this)">
         @csrf
-        <input class="form-control" name="field_type" hidden value={{$field_type}}>
+        <input class="form-control" name="company_type" hidden value={{$field_type}}>
         
-        <div class="mb-3">
+        <div class="mb-2">
             <textarea class="form-control" name="text"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Добавить</button>
